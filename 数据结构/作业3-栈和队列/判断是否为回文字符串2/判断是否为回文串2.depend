@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1585715539 source:c:\users\hp\desktop\判断是否为回文串2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1585725936 source:c:\users\hp\desktop\codeblocks\c数据结构\判断是否为回文串2\main.c
+	<stdio.h>
+	<stdlib.h>
+

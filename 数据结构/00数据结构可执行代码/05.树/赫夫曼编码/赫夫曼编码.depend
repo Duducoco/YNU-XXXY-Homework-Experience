@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1478693061 source:c:\users\zk\desktop\data\05.Ê÷\ºÕ·òÂü±àÂë\huffman.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"huffman.h"
+	"pQueue.h"
+
+1478693061 c:\users\zk\desktop\data\05.Ê÷\ºÕ·òÂü±àÂë\huffman.h
+
+1478677853 c:\users\zk\desktop\data\05.Ê÷\ºÕ·òÂü±àÂë\pqueue.h
+	"huffman.h"
+
+1478692414 source:c:\users\zk\desktop\data\05.Ê÷\ºÕ·òÂü±àÂë\pqueue.cpp
+	"pQueue.h"
+	<stdlib.h>
+	<stdio.h>
+

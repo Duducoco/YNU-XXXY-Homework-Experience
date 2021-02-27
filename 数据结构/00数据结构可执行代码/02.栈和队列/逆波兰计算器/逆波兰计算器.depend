@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1470655551 source:c:\users\zk\desktop\数据结构与算法\栈和队列\逆波兰计算器\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<math.h>
+

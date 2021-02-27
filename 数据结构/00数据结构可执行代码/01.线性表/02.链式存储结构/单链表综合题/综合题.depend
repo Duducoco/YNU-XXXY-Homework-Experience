@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1470209115 source:c:\users\zk\desktop\数据结构与算法\线性表\综合题\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<time.h>
+
+1470363494 source:c:\users\zk\desktop\数据结构与算法\线性表\综合题1\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<time.h>
+

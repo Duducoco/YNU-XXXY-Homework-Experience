@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1586498777 source:c:\users\hp\desktop\codeblocks\判断是否为回文字符串3\main.c
+	<stdio.h>
+	<stdlib.h>
+

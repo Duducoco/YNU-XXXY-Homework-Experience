@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1470894600 source:c:\users\zk\desktop\数据结构与算法\03.递归和分治\eightqueen\main.c
+	<stdio.h>
+	<stdlib.h>
+

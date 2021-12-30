@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tkinter 对话框 &#8212; Python 3.10.1 文档</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../_static/pydoctheme.css?2021.11.1" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="在 Python 3.10.1 文档 中搜索"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="关于这些文档" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="copyright" title="版权所有" href="../copyright.html" />
+    <link rel="next" title="tkinter.messagebox --- Tkinter 消息提示" href="tkinter.messagebox.html" />
+    <link rel="prev" title="tkinter.font --- Tkinter 字体封装" href="tkinter.font.html" />
+    <link rel="canonical" href="https://docs.python.org/3/library/dialog.html" />
+    
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="shortcut icon" type="image/png" href="../_static/py.svg" />
+            <script type="text/javascript" src="../_static/copybutton.js"></script>
+            <script type="text/javascript" src="../_static/menu.js"></script> 
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu" />
+    <label for="menuToggler" class="toggler__label">
+        <span></span>
+    </label>
+    <nav class="nav-content" role="navigation">
+         <a href="https://www.python.org/" class="nav-logo">
+             <img src="../_static/py.svg" alt="Logo"/>
+         </a>
+        <div class="version_switcher_placeholder"></div>
+        <form role="search" class="search" action="../search.html" method="get">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                <path fill-rule="nonzero"
+                        d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#444"></path>
+            </svg>
+            <input type="text" name="q" aria-label="快速搜索"/>
+            <input type="submit" value="转向"/>
+        </form>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+  <h3><a href="../contents.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tkinter 对话框</a><ul>
+<li><a class="reference internal" href="#module-tkinter.simpledialog"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.simpledialog</span></code> --- 标准 Tkinter 输入对话框</a></li>
+<li><a class="reference internal" href="#module-tkinter.filedialog"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.filedialog</span></code> --- 文件选择对话框.</a><ul>
+<li><a class="reference internal" href="#native-load-save-dialogs">原生的载入/保存对话框.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-tkinter.commondialog"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.commondialog</span></code> --- 对话窗口模板</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="tkinter.font.html"
+                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.font</span></code> --- Tkinter 字体封装</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="tkinter.messagebox.html"
+                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.messagebox</span></code> --- Tkinter 消息提示</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">提交 Bug</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/dialog.rst"
+            rel="nofollow">显示源代码
+        </a>
+      </li>
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 模块索引"
+             >模块</a> |</li>
+        <li class="right" >
+          <a href="tkinter.messagebox.html" title="tkinter.messagebox --- Tkinter 消息提示"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="tkinter.font.html" title="tkinter.font --- Tkinter 字体封装"
+             accesskey="P">上一页</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.1 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Python 标准库</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="tk.html" accesskey="U">Tk图形用户界面(GUI)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tkinter 对话框</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="快速搜索" aria-label="快速搜索" type="text" name="q" />
+          <input type="submit" value="转向" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+                     |
+                </li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tkinter-dialogs">
+<h1>Tkinter 对话框<a class="headerlink" href="#tkinter-dialogs" title="永久链接至标题">¶</a></h1>
+<div class="section" id="module-tkinter.simpledialog">
+<span id="tkinter-simpledialog-standard-tkinter-input-dialogs"></span><h2><a class="reference internal" href="#module-tkinter.simpledialog" title="tkinter.simpledialog: Simple dialog windows (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.simpledialog</span></code></a> --- 标准 Tkinter 输入对话框<a class="headerlink" href="#module-tkinter.simpledialog" title="永久链接至标题">¶</a></h2>
+<p><strong>源码:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/tkinter/simpledialog.py">Lib/tkinter/simpledialog.py</a></p>
+<hr class="docutils" />
+<p><a class="reference internal" href="#module-tkinter.simpledialog" title="tkinter.simpledialog: Simple dialog windows (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.simpledialog</span></code></a> 模块包含了一些便捷类和函数，用于创建简单的模态对话框，从用户那里读取一个值。</p>
+<dl class="py function">
+<dt id="tkinter.simpledialog.askfloat">
+<code class="sig-prename descclassname">tkinter.simpledialog.</code><code class="sig-name descname">askfloat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">prompt</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.simpledialog.askfloat" title="永久链接至目标">¶</a></dt>
+<dt id="tkinter.simpledialog.askinteger">
+<code class="sig-prename descclassname">tkinter.simpledialog.</code><code class="sig-name descname">askinteger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">prompt</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.simpledialog.askinteger" title="永久链接至目标">¶</a></dt>
+<dt id="tkinter.simpledialog.askstring">
+<code class="sig-prename descclassname">tkinter.simpledialog.</code><code class="sig-name descname">askstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">prompt</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.simpledialog.askstring" title="永久链接至目标">¶</a></dt>
+<dd><p>以上三个函数提供给用户输入期望值的类型的对话框.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tkinter.simpledialog.Dialog">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.simpledialog.</code><code class="sig-name descname">Dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.simpledialog.Dialog" title="永久链接至目标">¶</a></dt>
+<dd><p>自定义对话框的基类.</p>
+<blockquote>
+<div><dl class="py method">
+<dt id="tkinter.simpledialog.Dialog.body">
+<code class="sig-name descname">body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.simpledialog.Dialog.body" title="永久链接至目标">¶</a></dt>
+<dd><p>可以覆盖，用于构建对话框的界面，并返回初始焦点所在的部件。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.simpledialog.Dialog.buttonbox">
+<code class="sig-name descname">buttonbox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.simpledialog.Dialog.buttonbox" title="永久链接至目标">¶</a></dt>
+<dd><p>加入 OK 和 Cancel 按钮的默认行为. 重写自定义按钮布局.</p>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tkinter.filedialog">
+<span id="tkinter-filedialog-file-selection-dialogs"></span><h2><a class="reference internal" href="#module-tkinter.filedialog" title="tkinter.filedialog: Dialog classes for file selection (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.filedialog</span></code></a> --- 文件选择对话框.<a class="headerlink" href="#module-tkinter.filedialog" title="永久链接至标题">¶</a></h2>
+<p><strong>源码:</strong> <a class="reference external" href="https://github.com/python/cpython/tree/3.10/Lib/tkinter/filedialog.py">Lib/tkinter/filedialog.py</a></p>
+<hr class="docutils" />
+<p><a class="reference internal" href="#module-tkinter.filedialog" title="tkinter.filedialog: Dialog classes for file selection (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.filedialog</span></code></a> 模块提供了用于创建文件/目录选择窗口的类和工厂函数。</p>
+<div class="section" id="native-load-save-dialogs">
+<h3>原生的载入/保存对话框.<a class="headerlink" href="#native-load-save-dialogs" title="永久链接至标题">¶</a></h3>
+<p>以下类和函数提供了文件对话窗口，这些窗口带有原生外观，具备可定制行为的配置项。这些关键字参数适用于下列类和函数：</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><em>parent</em> —— 对话框下方的窗口</div>
+</div>
+<div class="line-block">
+<div class="line"><em>title</em> —— 窗口的标题</div>
+</div>
+<div class="line-block">
+<div class="line"><em>initialdir</em> —— 对话框的启动目录</div>
+</div>
+<div class="line-block">
+<div class="line"><em>initialfile</em> —— 打开对话框时选中的文件</div>
+</div>
+<div class="line-block">
+<div class="line"><em>filetypes</em> —— （标签，匹配模式）元组构成的列表，允许使用 “*” 通配符</div>
+</div>
+<div class="line-block">
+<div class="line"><em>defaultextension</em> —— 默认的扩展名，用于加到文件名后面（保存对话框）。</div>
+</div>
+<div class="line-block">
+<div class="line"><em>multiple</em> —— 为 True 则允许多选</div>
+</div>
+</div></blockquote>
+<p>** 静态工厂函数 **</p>
+<p>调用以下函数时，会创建一个模态的、原生外观的对话框，等待用户选取，然后将选中值或 <code class="docutils literal notranslate"><span class="pre">None</span></code> 返回给调用者。</p>
+<dl class="py function">
+<dt id="tkinter.filedialog.askopenfile">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">askopenfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'r'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.askopenfile" title="永久链接至目标">¶</a></dt>
+<dt id="tkinter.filedialog.askopenfiles">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">askopenfiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'r'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.askopenfiles" title="永久链接至目标">¶</a></dt>
+<dd><p>上述两个函数创建了 <a class="reference internal" href="#tkinter.filedialog.Open" title="tkinter.filedialog.Open"><code class="xref py py-class docutils literal notranslate"><span class="pre">Open</span></code></a> 对话框，并返回一个只读模式打开的文件对象。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tkinter.filedialog.asksaveasfile">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">asksaveasfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'w'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.asksaveasfile" title="永久链接至目标">¶</a></dt>
+<dd><p>创建 <a class="reference internal" href="#tkinter.filedialog.SaveAs" title="tkinter.filedialog.SaveAs"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaveAs</span></code></a> 对话框并返回一个写入模式打开的文件对象。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tkinter.filedialog.askopenfilename">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">askopenfilename</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.askopenfilename" title="永久链接至目标">¶</a></dt>
+<dt id="tkinter.filedialog.askopenfilenames">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">askopenfilenames</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.askopenfilenames" title="永久链接至目标">¶</a></dt>
+<dd><p>以上两个函数创建了 <a class="reference internal" href="#tkinter.filedialog.Open" title="tkinter.filedialog.Open"><code class="xref py py-class docutils literal notranslate"><span class="pre">Open</span></code></a> 对话框，并返回选中的文件名，对应着已存在的文件。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tkinter.filedialog.asksaveasfilename">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">asksaveasfilename</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.asksaveasfilename" title="永久链接至目标">¶</a></dt>
+<dd><p>创建 <a class="reference internal" href="#tkinter.filedialog.SaveAs" title="tkinter.filedialog.SaveAs"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaveAs</span></code></a> 对话框，并返回选中的文件名。</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tkinter.filedialog.askdirectory">
+<code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">askdirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.askdirectory" title="永久链接至目标">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">提示用户选择一个目录.</div>
+<div class="line">其他关键字参数：</div>
+<div class="line-block">
+<div class="line"><em>mustexist</em> —— 确定是否必须为已存在的目录。</div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tkinter.filedialog.Open">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">Open</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.Open" title="永久链接至目标">¶</a></dt>
+<dt id="tkinter.filedialog.SaveAs">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">SaveAs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.SaveAs" title="永久链接至目标">¶</a></dt>
+<dd><p>上述两个类提供了用于保存和加载文件的原生对话窗口。</p>
+</dd></dl>
+
+<p>** 便捷类 **</p>
+<p>以下类用于从头开始创建文件/目录窗口。不会模仿当前系统的原生外观。</p>
+<dl class="py class">
+<dt id="tkinter.filedialog.Directory">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">Directory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.Directory" title="永久链接至目标">¶</a></dt>
+<dd><p>创建对话框，提示用户选择一个目录。</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>为了实现自定义的事件处理和行为，应继承 <em>FileDialog</em> 类。</p>
+</div>
+<dl class="py class">
+<dt id="tkinter.filedialog.FileDialog">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">FileDialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog" title="永久链接至目标">¶</a></dt>
+<dd><p>创建一个简单的文件选择对话框。</p>
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.cancel_command">
+<code class="sig-name descname">cancel_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.cancel_command" title="永久链接至目标">¶</a></dt>
+<dd><p>触发对话窗口的终止。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.dirs_double_event">
+<code class="sig-name descname">dirs_double_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.dirs_double_event" title="永久链接至目标">¶</a></dt>
+<dd><p>目录双击事件的处理程序。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.dirs_select_event">
+<code class="sig-name descname">dirs_select_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.dirs_select_event" title="永久链接至目标">¶</a></dt>
+<dd><p>目录单击事件的处理程序。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.files_double_event">
+<code class="sig-name descname">files_double_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.files_double_event" title="永久链接至目标">¶</a></dt>
+<dd><p>文件双击事件的处理程序。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.files_select_event">
+<code class="sig-name descname">files_select_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.files_select_event" title="永久链接至目标">¶</a></dt>
+<dd><p>文件单击事件的处理程序。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.filter_command">
+<code class="sig-name descname">filter_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.filter_command" title="永久链接至目标">¶</a></dt>
+<dd><p>按目录筛选文件。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.get_filter">
+<code class="sig-name descname">get_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.get_filter" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前使用的文件筛选器。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.get_selection">
+<code class="sig-name descname">get_selection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.get_selection" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前选中项。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.go">
+<code class="sig-name descname">go</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dir_or_file</span><span class="o">=</span><span class="default_value">os.curdir</span></em>, <em class="sig-param"><span class="n">pattern</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">key</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.go" title="永久链接至目标">¶</a></dt>
+<dd><p>显示对话框并启动事件循环。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.ok_event">
+<code class="sig-name descname">ok_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.ok_event" title="永久链接至目标">¶</a></dt>
+<dd><p>退出对话框并返回当前选中项。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.quit">
+<code class="sig-name descname">quit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">how</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.quit" title="永久链接至目标">¶</a></dt>
+<dd><p>退出对话框并返回文件名。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.set_filter">
+<code class="sig-name descname">set_filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dir</span></em>, <em class="sig-param"><span class="n">pat</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.set_filter" title="永久链接至目标">¶</a></dt>
+<dd><p>设置文件筛选器。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkinter.filedialog.FileDialog.set_selection">
+<code class="sig-name descname">set_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.FileDialog.set_selection" title="永久链接至目标">¶</a></dt>
+<dd><p>将当前选中文件更新为 <em>file</em>。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tkinter.filedialog.LoadFileDialog">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">LoadFileDialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.LoadFileDialog" title="永久链接至目标">¶</a></dt>
+<dd><p>FileDialog 的一个子类，创建用于选取已有文件的对话窗口。</p>
+<dl class="py method">
+<dt id="tkinter.filedialog.LoadFileDialog.ok_command">
+<code class="sig-name descname">ok_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.LoadFileDialog.ok_command" title="永久链接至目标">¶</a></dt>
+<dd><p>检测有否给出文件，以及选中的文件是否存在。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tkinter.filedialog.SaveFileDialog">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.filedialog.</code><code class="sig-name descname">SaveFileDialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.SaveFileDialog" title="永久链接至目标">¶</a></dt>
+<dd><p>FileDialog 的一个子类，创建用于选择目标文件的对话窗口。</p>
+<dl class="py method">
+<dt id="tkinter.filedialog.SaveFileDialog.ok_command">
+<code class="sig-name descname">ok_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.filedialog.SaveFileDialog.ok_command" title="永久链接至目标">¶</a></dt>
+<dd><p>检测选中文件是否为目录。如果选中了已存在文件，则需要用户进行确认。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-tkinter.commondialog">
+<span id="tkinter-commondialog-dialog-window-templates"></span><h2><a class="reference internal" href="#module-tkinter.commondialog" title="tkinter.commondialog: Tkinter base class for dialogs (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.commondialog</span></code></a> --- 对话窗口模板<a class="headerlink" href="#module-tkinter.commondialog" title="永久链接至标题">¶</a></h2>
+<p><strong>源码:</strong> ： source:<cite>Lib/tkinter/commondialog.py</cite></p>
+<hr class="docutils" />
+<p><a class="reference internal" href="#module-tkinter.commondialog" title="tkinter.commondialog: Tkinter base class for dialogs (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.commondialog</span></code></a> 模块提供了 <a class="reference internal" href="#tkinter.commondialog.Dialog" title="tkinter.commondialog.Dialog"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dialog</span></code></a> 类，是其他模块定义的对话框的基类。</p>
+<dl class="py class">
+<dt id="tkinter.commondialog.Dialog">
+<em class="property">class </em><code class="sig-prename descclassname">tkinter.commondialog.</code><code class="sig-name descname">Dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">master</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.commondialog.Dialog" title="永久链接至目标">¶</a></dt>
+<dd><dl class="py method">
+<dt id="tkinter.commondialog.Dialog.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tkinter.commondialog.Dialog.show" title="永久链接至目标">¶</a></dt>
+<dd><p>显示对话窗口。</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>模块 <a class="reference internal" href="tkinter.messagebox.html#module-tkinter.messagebox" title="tkinter.messagebox: Various types of alert dialogs (Tk)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.messagebox</span></code></a>, <a class="reference internal" href="../tutorial/inputoutput.html#tut-files"><span class="std std-ref">读写文件</span></a></p>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../contents.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tkinter 对话框</a><ul>
+<li><a class="reference internal" href="#module-tkinter.simpledialog"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.simpledialog</span></code> --- 标准 Tkinter 输入对话框</a></li>
+<li><a class="reference internal" href="#module-tkinter.filedialog"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.filedialog</span></code> --- 文件选择对话框.</a><ul>
+<li><a class="reference internal" href="#native-load-save-dialogs">原生的载入/保存对话框.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-tkinter.commondialog"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.commondialog</span></code> --- 对话窗口模板</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="tkinter.font.html"
+                        title="上一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.font</span></code> --- Tkinter 字体封装</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="tkinter.messagebox.html"
+                        title="下一章"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tkinter.messagebox</span></code> --- Tkinter 消息提示</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">提交 Bug</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/3.10/Doc/library/dialog.rst"
+            rel="nofollow">显示源代码
+        </a>
+      </li>
+    </ul>
+  </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 模块索引"
+             >模块</a> |</li>
+        <li class="right" >
+          <a href="tkinter.messagebox.html" title="tkinter.messagebox --- Tkinter 消息提示"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="tkinter.font.html" title="tkinter.font --- Tkinter 字体封装"
+             >上一页</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.10.1 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Python 标准库</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="tk.html" >Tk图形用户界面(GUI)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tkinter 对话框</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="快速搜索" aria-label="快速搜索" type="text" name="q" />
+          <input type="submit" value="转向" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+                     |
+                </li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">版权所有</a> 2001-2021, Python Software Foundation.
+    <br />
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br />
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br />
+    See <a href="">History and License</a> for more information.
+    <br /><br />
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br />
+    <br />
+
+    最后更新于 12月 26, 2021.
+    <a href="https://docs.python.org/3/bugs.html">Found a bug</a>?
+    <br />
+
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,13 @@
+﻿CODES SEGMENT
+    ASSUME CS:CODES
+START:
+    XOR AX, AX      ;将AX清零
+    MOV CX, 100     ;循环100次
+    HEAD:
+    ADD AX, CX      ;每次加CX
+    LOOP HEAD
+
+    MOV AH,4CH
+    INT 21H
+CODES ENDS
+    END START

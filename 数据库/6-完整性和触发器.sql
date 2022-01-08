@@ -105,6 +105,7 @@ after insert on student for each row
 
 DELIMITER |
 drop trigger if exists Insert_sal;
+
 create trigger Insert_sal
 before insert on Teacher for each row
 begin 

@@ -16,14 +16,12 @@ CODES SEGMENT
 START:
     MOV AX,DATAS
     MOV DS,AX
-    ;保存寄存器
-    PUSH AX
-    PUSH CX
-    PUSH SI
     CALL CAL                ;调用子程序
     MOV AH,4CH
     INT 21H
-    CAL:MOV CX, 10              ;循环次数
+
+    CAL proc
+    MOV CX, 10              ;循环次数
     MOV SI, OFFSET GRADE
     LOP:
     LODSB                   ;将成绩送入AL
@@ -53,10 +51,8 @@ START:
         INC S6              ;计数器递增
         JMP E
 E:  LOOP LOP
-    ;恢复寄存器
-    POP SI
-    POP CX
-    POP AX
     RET
+    CAL endp
+    
 CODES ENDS
     END START

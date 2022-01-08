@@ -39,7 +39,7 @@ begin
 			if (totalDepositOut < amount) then
 				set info = '转出余额不足';
 			else
-            update account set total = total - amount where accountnum = outAccount;
+                update account set total = total - amount where accountnum = outAccount;
 				update account set total = total  + amount where accountnum = inAccount;
 				set info = '转账成功！';
 			end if;

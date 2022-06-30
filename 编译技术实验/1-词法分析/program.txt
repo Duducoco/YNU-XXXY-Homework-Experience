@@ -1,0 +1,15 @@
+int 3x,y,&z:integer;
+a:char;  %bool
+bool   %% aaaa
+{
+	false($@) 		then
+       x==(23.5+5);
+       y='z'+18*3>100;
+/*test    
+
+
+dfgdfgf
+
+ true*/   if 256<>986 
+then <=else ;
+	}

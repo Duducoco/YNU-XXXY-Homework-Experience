@@ -1,0 +1,8 @@
+ main()
+{
+   char a;
+   char b;
+   read(b);
+    write(b);
+    return;
+}

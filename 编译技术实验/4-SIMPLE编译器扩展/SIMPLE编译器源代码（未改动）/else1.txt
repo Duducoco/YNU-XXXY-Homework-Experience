@@ -1,0 +1,8 @@
+main ()
+{  int x,y;
+    x=2;
+y=10;
+if y> 5 then if y< 7 then x = 0; else x = 1;
+write(x);
+return;
+}

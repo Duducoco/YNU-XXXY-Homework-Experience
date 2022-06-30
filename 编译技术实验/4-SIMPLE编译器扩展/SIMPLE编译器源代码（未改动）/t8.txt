@@ -1,0 +1,14 @@
+main
+{  int a1,b;
+   b=2+3;
+  {int x,y;
+       if a1 then x=5+6*3; 
+      else x=5;
+   }
+
+    {char x,y;
+     x='c';
+    } 
+    
+a1=5;
+}

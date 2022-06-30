@@ -1,0 +1,15 @@
+
+f
+{  int a1,b;
+   b=2+3;
+   return;
+}
+
+main
+{
+  int a1,b;
+   b=3;
+  f;
+return;
+}
+

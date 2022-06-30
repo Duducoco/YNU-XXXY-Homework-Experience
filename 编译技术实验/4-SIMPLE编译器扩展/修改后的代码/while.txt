@@ -1,0 +1,11 @@
+main()
+{ 
+  int a,b;
+  read(a,b);
+  {
+    while a<b do a=a+1;
+    write(a,b);
+  }
+  return;
+}
+

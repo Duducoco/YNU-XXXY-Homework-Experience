@@ -1,0 +1,4 @@
+real a,b;
+int c,d;
+c:=c+d;
+b:=e*a.

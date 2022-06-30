@@ -1,0 +1,16 @@
+f()
+{  char a1,b;
+    {  int x;
+        x=4+5;
+        {  int b;
+           b=1;
+         }
+         {  int x;
+            x=2;
+          }
+          b='x';
+       }
+   a1=b;
+write(a1);
+return;
+}

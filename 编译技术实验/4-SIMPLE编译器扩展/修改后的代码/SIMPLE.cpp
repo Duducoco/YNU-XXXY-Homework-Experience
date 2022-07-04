@@ -985,7 +985,6 @@ int stmt(int lev, int *tx, int *off)
 
         else if (table[i].form == var)
         {
-
             ASSstmt(lev, tx, i); // 准备按照赋值语句处理
         }
     }
@@ -2006,7 +2005,7 @@ void sourceOperandGen(struct addrRecord *addr, int reg)
             emit(opPUSH, bp, 0, 0);
             emit(opLD, reg, temptable[j].address, bp);
             emit(opADD, bp, bp, reg);
-            emit(opLD, reg, 0, bp); 
+            emit(opLD, reg, 0, bp);
             emit(opPOP, bp, 0, 0);
         }
         else
